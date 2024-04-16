@@ -7,6 +7,14 @@
     display: inline-block;
 }
 
+.container__botao:checked~.container__rotulo>.cabeçalho__menu-hamburguer {
+    background-image: url("../img/Menu Aberto.svg");
+}
+
+.container__botao:checked~.container__rotulo {
+    background: var(--azul-degrade);
+}
+
 .cabeçalho {
     background-color: var(--branco);
     display: flex;
@@ -62,7 +70,7 @@
     display: none;
 }
 
-.opções { 
+.opções {
     display: none;
 }
 
@@ -70,10 +78,11 @@
     display: none;
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
+
     .container__titulo,
     .container__titulo--negrito {
-        font-family: var(--fonte-secundaria);
+        font-family: var(--fonte-secundario);
         font-size: 30px;
     }
 
@@ -91,7 +100,7 @@
     }
 
     .opções__item {
-        margin-left: 2em;
+        padding: 0 1em;
         text-transform: uppercase;
     }
 
@@ -108,49 +117,52 @@
         display: none;
     }
 
-    .container__imagem {
-        padding-left: 5em;
-    }
-
     .opções__botão:checked~.lista-menu {
         display: block;
         width: auto;
-   }
+    }
 
-   .opções__botão {
-    display: none;
-   }
+    .opções__botão {
+        display: none;
+    }
 
-   .container__texto {
-    display: none;
-   }
+    .opções__botão:checked~.opções__rotulo>.opções__item {
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
 
-   @media screen and (min-width: 1728px) {
+    .opções__item {
+        padding: 2em 1em;
+    }
 
-        .container__link{
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--preto);
-            font-size: 20px;
-        }
+    .lista-menu__item:hover {
+        background: var(--azul-degrade);
+    }
 
-        .container__texto {
-            display: block;
+    .lista-menu__item:hover>.lista-menu__link {
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
 
-        }
+}
 
-        .cabeçalho {
-            padding: 0 2em;
-        }
+@media screen and (min-width: 1728px) {
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
 
-        .opções {
-            margin-right: auto;
-        }
+    .cabeçalho {
+        padding: 0 2em;
+    }
 
-    
-        
-    
-   }
+    .opções {
+        margin-right: auto;
+    }
 
+    .container__texto {
+        display: block;
+    }
 }
